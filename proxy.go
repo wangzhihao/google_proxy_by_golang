@@ -16,7 +16,7 @@ import (
 const (
 	timeout    = 10 * time.Second
 	servername = os.Getenv("servername") //"服务器的地址"
-        port       = os.Getenv("port") || 3010 //端口号
+        port       = os.Getenv("port") || "3010" //端口号
 	remote     = "www.google.com"
 	scheme     = "http"
 )
