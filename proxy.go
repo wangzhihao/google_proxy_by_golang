@@ -15,8 +15,6 @@ import (
 
 const (
 	timeout    = 10 * time.Second
-	servername = os.Getenv("servername") //"服务器的地址"
-        port       = os.Getenv("port") || "3010" //端口号
 	remote     = "www.google.com"
 	scheme     = "http"
 )
@@ -46,6 +44,8 @@ func (this *Filter) Replace(str string) string {
 	return str
 }
 
+var servername = os.Getenv("servername") //"服务器的地址"
+var port       = os.Getenv("port") //端口号
 var client *http.Client
 var rules map[string]string = map[string]string{
 	"https": "http",
