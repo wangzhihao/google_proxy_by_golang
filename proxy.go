@@ -2,6 +2,7 @@ package main
 
 import (
 	"errors"
+        "os"
 	"fmt"
 	"io/ioutil"
 	"net/http"
@@ -14,7 +15,8 @@ import (
 
 const (
 	timeout    = 10 * time.Second
-	servername = "服务器的地址"
+	servername = os.Getenv("servername") //"服务器的地址"
+        port       = os.Getenv("port") || 3010 //端口号
 	remote     = "www.google.com"
 	scheme     = "http"
 )
@@ -114,5 +116,5 @@ func main() {
 
 	http.TimeoutHandler(server, timeout, "Timeout")
 
-	panic(http.ListenAndServe(":3000", server))
+	panic(http.ListenAndServe(":" + port, server))
 }
