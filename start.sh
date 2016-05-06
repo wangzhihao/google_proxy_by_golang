@@ -2,4 +2,4 @@
 set -ex
 
 go build proxy.go
-servername='chopin.fm/g' port='3020' ./proxy
+servername='chopin.fm/g' port='3200' ./proxy
