@@ -51,7 +51,7 @@ var rules map[string]string = map[string]string{
 	"https": "http",
 	"([0-9A-Za-z.-]+\\.gstatic\\.com)":       servername + "/!$1",
 	"((apis)\\.google\\.com)":                servername + "/!$1",
-	"(((www)|(images))\\.google\\.com)":       servername + "/!$1",
+	"((images)\\.google\\.com)":       servername + "/!$1",
 	"(img\\.youtube\\.com)":                  servername + "/!$1"}
 var filter *Filter
 var NotFollowRedirect error
