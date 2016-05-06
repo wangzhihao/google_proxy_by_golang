@@ -85,9 +85,7 @@ func proxy(w http.ResponseWriter, req *http.Request) {
 	defer getgoogle.Body.Close()
 	if getgoogle.StatusCode == 302 || getgoogle.StatusCode == 301 {
 		uu, _ := url.Parse(getgoogle.Header.Get("Location"))
-		uu.Scheme = "http"
-		uu.Host = filter.Replace(uu.Host)
-		w.Header().Add("Location", uu.String())
+                w.Header().Add("Location", filter.Replace(uu.String()))
 	}
 	w.Header().Add("Cache-Control", "no-cache")
 	w.Header().Add("Content-Type", getgoogle.Header.Get("Content-Type"))
