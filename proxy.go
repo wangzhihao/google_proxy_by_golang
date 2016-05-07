@@ -48,7 +48,6 @@ var servername = os.Getenv("servername") //"服务器的地址"
 var port       = os.Getenv("port") //端口号
 var client *http.Client
 var rules map[string]string = map[string]string{
-	"https": "http",
 	"([0-9A-Za-z.-]+\\.gstatic\\.com)":       servername + "/!$1",
 	"((apis)\\.google\\.com)":                servername + "/!$1",
 	"((www)|(images))\\.google\\.[0-9a-z.]+": servername,
